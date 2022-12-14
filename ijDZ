@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSL12_2_3
+{
+    class Program
+    {
+        
+        static void Main()
+        {
+
+            string SetName;               // установить имя;
+            string Change;      //- изменить цвет консоли;
+            string SetPassword;      // – установить пароль;
+            string WriteName;        // – вывести имя(после ввода пароля);
+            string Esc;             // – выход из программы.
+            string Name = "";
+            string Password = "";
+            string userInput = "";
+            string userInputColor = "";
+            int i = 0;
+            while( i <= 0)
+            {
+                Console.WriteLine("#############################################");
+                Console.WriteLine("--------------------MENU---------------------");
+                Console.WriteLine(" 1)SetName - Установить имя" + "\n 2)ChangeConsoleColor - Изменить цвет консоли" + "\n 3)SetPassword - Установить пароль" + "\n 4)UserData - Данные пользователя" + "\n 5)Esc- Выход из программs");
+                userInput = Console.ReadLine();
+                Console.Clear();
+
+                if (userInput == "SetName")
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine("-------------User Name-------------------");
+                    Console.WriteLine("Введите ваше имя");
+                    Name = Console.ReadLine();
+                    Console.Clear();
+                }
+
+                else if (userInput == "ChangeConsoleColor")
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine("-----------------Color-------------------");
+                    Console.WriteLine("Выберите цвет, Red, Blue, Green ");
+                    userInputColor = Console.ReadLine();
+                    Console.Clear();
+                    if(userInputColor == "Red")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else if (userInputColor == "Blue")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else if (userInputColor == "Green")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                }
+                
+                else if (userInput == "SetPassword")
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine("----------------Pasword------------------");
+                    Console.WriteLine("Введите новый пароль");
+                    Password = Console.ReadLine();
+                    Console.Clear();
+                }
+                
+                else if (userInput == "UserData")
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine("-------------------Data------------------");
+                    Console.WriteLine("Логин:");
+                    Console.WriteLine(Name);
+                    Console.WriteLine("Пароль:");
+                    Console.WriteLine(Password);
+                    Console.ReadLine();
+                    Console.Clear();
+
+                }
+                else if (userInput == "Esc")
+                {
+                    break;
+                }
+
+                else 
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine("------------------Error------------------");
+                    Console.WriteLine("Вы ввели не правильную команду нажмите ");
+                    Console.WriteLine("Нажмите Enter для повтора ввода");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+            }
+        }
+    }
+}
